@@ -12,6 +12,14 @@
     components: {
       Navbar,
     },
+    watch :{
+      $route(){
+        this.$store.commit("onStart")
+      }
+    },
+    mounted(){
+      this.$store.commit("onStart")
+    },
   }
 </script>
 <style>
