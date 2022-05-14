@@ -8,7 +8,7 @@
 			        <span class="navbar-toggler-icon"></span>
 			      </button>
 			      	<div class="collapse navbar-collapse" id="navbarColor01">
-				        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				        <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="text-transform: capitalize;">
 					          <li class="nav-item">
 					            <router-link class="nav-link" to="/">Home</router-link>  
 					          </li>
@@ -17,12 +17,12 @@
 					            <router-link class="nav-link" to="/about">About</router-link> 
 
 					          </li>
-					          <li class="nav-item"  v-if="$store.state.isAuthenticated">
-					            <router-link class="nav-link" to="/profile">Profile</router-link>
+					          
+				          		
+					          
 
-					          </li>
-				          		<li class="nav-item" v-if="$store.state.isAuthenticated">
-					            <router-link class="nav-link" to="/logout">logout</router-link>
+					          <li class="nav-item" v-if="$store.state.isAuthenticated">
+					            <router-link class="nav-link" to="/add">add article</router-link>
 
 					          </li>
 					          <li class="nav-item" v-if="!$store.state.isAuthenticated">
@@ -34,9 +34,12 @@
 					            <router-link class="nav-link" to="/register">register</router-link>
 
 					          </li>
+					          <li class="nav-item"  v-if="$store.state.isAuthenticated">
+					            <router-link class="nav-link" to="/profile">Profile</router-link>
 
+					          </li>
 					          <li class="nav-item" v-if="$store.state.isAuthenticated">
-					            <router-link class="nav-link" to="/add">add</router-link>
+					            <router-link class="nav-link" to="/logout">logout</router-link>
 
 					          </li>
 					          
