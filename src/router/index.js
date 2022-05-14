@@ -3,6 +3,7 @@ import store from '@/store'
 
 import HomeView from '../views/HomeView.vue'
 import Detail from '../views/Detail.vue'
+import Add from '../views/Add.vue'
 
 
 
@@ -26,6 +27,13 @@ const routes = [
     path: '/article/:slug',
     name: 'Detail',
     component: Detail
+  },
+  {
+    path: '/add',
+    name: 'Add',
+    component: Add,
+    meta: { requiresAuth: true }
+
   },
   {
     path: '/about',
