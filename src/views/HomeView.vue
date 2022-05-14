@@ -1,15 +1,20 @@
 <template>
   <div class="Home">
-      <h1>Home</h1>
-      <div>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <h1 class="text-center mb-4">Home</h1>
+      
+      <!-- Articles -->
+      <article v-for="article in articles">
+        <h3>
+          <a :href="`/article/${article.slug}`">{{article.title}}</a>
+        </h3>
+        <div>
+          {{article.description}} 
+          <a :href="`/article/${article.slug}`">+ continue reading</a>
+        </div>
         <hr>
-      </div>
+      </article>
+
+
   </div>
 </template>
 
@@ -18,6 +23,13 @@
 
 export default {
   name: 'HomeView',
+  data (){
+    let articles = localStorage.getItem("articles")
+    articles = JSON.parse(articles)
+    return {
+      articles: articles,
+    }
+  }
  
 }
 </script>
