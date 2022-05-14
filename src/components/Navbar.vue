@@ -17,15 +17,15 @@
 					            <router-link class="nav-link" to="/about">About</router-link> 
 
 					          </li>
-					          <li class="nav-item">
+					          <li class="nav-item"  v-if="$store.state.isAuthenticated">
 					            <router-link class="nav-link" to="/profile">Profile</router-link>
 
 					          </li>
-				          		<li class="nav-item">
+				          		<li class="nav-item" v-if="$store.state.isAuthenticated">
 					            <router-link class="nav-link" to="/logout">logout</router-link>
 
 					          </li>
-					          <li class="nav-item">
+					          <li class="nav-item" v-if="!$store.state.isAuthenticated">
 					            <router-link class="nav-link" to="/login">login</router-link>
 
 					          </li>

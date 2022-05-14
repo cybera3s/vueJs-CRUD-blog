@@ -13,6 +13,7 @@
     methods: {
       doLogin(){
         this.$store.commit("login", "abc123")
+        this.$router.push("profile")
       }
     }
   }
