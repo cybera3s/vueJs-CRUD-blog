@@ -3,8 +3,8 @@
     <h1>This is an Login page</h1>
     <button @click="doLogin" class="btn btn-success">Login</button>
   </div>
-  {{$store}}
-
+  <!-- {{$store}} -->
+  {{$router}}
 </template>
 
 <script>
