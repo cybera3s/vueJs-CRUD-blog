@@ -11,7 +11,7 @@
       <hr>
       <div v-if="$store.state.isAuthenticated">
         <button @click="edit=!edit" class="btn btn-warning me-1">Edit</button>
-        <button class="btn btn-danger">Remove</button>
+        <button class="btn btn-danger" @click="doRemove">Remove</button>
         <hr>
         <form @submit.prevent="doEdit" v-if="edit" id="edit-form">
           <div class="mb-3">
@@ -66,7 +66,9 @@ export default {
     }
   },
   methods: {
+    // edit form func
     doEdit(){
+
           let index = this.articles.findIndex(
           article => article.slug == this.$route.params.slug
         )
@@ -79,13 +81,25 @@ export default {
             description: this.description,
             content: this.content,
           }
-          console.log(this.articles[index])
 
           let database = JSON.stringify(this.articles)
           localStorage.setItem("articles", database)
           this.article = this.articles[index]
           this.edit = false
           this.$router.push(`/article/${this.articles[index].slug}`)
+
+    },
+    // remove form func
+    doRemove() {
+
+        let index = this.articles.findIndex(
+          article => article.slug == this.$route.params.slug
+        )
+        this.articles.splice(index, 1)
+
+          let database = JSON.stringify(this.articles)
+          localStorage.setItem("articles", database)
+          this.$router.push("/")
 
     },
   }
