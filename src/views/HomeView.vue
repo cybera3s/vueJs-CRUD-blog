@@ -5,11 +5,15 @@
       <!-- Articles -->
       <article v-for="article in articles">
         <h3>
-          <a :href="`/article/${article.slug}`">{{article.title}}</a>
+          <router-link :to="`/article/${article.slug}`">
+            {{article.title}}
+          </router-link>  
         </h3>
         <div>
           {{article.description}} 
-          <a :href="`/article/${article.slug}`">+ continue reading</a>
+           <router-link :to="`/article/${article.slug}`">
+            + continue reading
+          </router-link>  
         </div>
         <hr>
       </article>
