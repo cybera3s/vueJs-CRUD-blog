@@ -115,7 +115,6 @@
           this.passwordE = false
           this.passwordEM = ''
         }
-
         // Confirm Password validation
 
         if (this.password2.length < 6){
