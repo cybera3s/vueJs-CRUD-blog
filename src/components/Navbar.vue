@@ -29,6 +29,11 @@
 					            <router-link class="nav-link" to="/login">login</router-link>
 
 					          </li>
+
+					          <li class="nav-item" v-if="!$store.state.isAuthenticated">
+					            <router-link class="nav-link" to="/register">register</router-link>
+
+					          </li>
 					          
 				        </ul>
 
