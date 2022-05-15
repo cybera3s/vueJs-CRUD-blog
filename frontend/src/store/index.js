@@ -1,4 +1,6 @@
 import { createStore } from 'vuex'
+import axios from 'axios'
+
 
 export default createStore({
   state: {
@@ -13,9 +15,13 @@ export default createStore({
       if (token){
         state.isAuthenticated = true
         state.token = token
+        axios.defaults.headers.common['Authorization'] = "Token " + token
+
       } else {
         state.isAuthenticated = false
         state.token = ''
+        axios.defaults.headers.common['Authorization'] = ""
+
       }
     },
     login(state, token){
@@ -23,16 +29,22 @@ export default createStore({
           state.isAuthenticated = true
           state.token = token
           localStorage.setItem("token", token)
+          axios.defaults.headers.common['Authorization'] = "Token " + token
+
+
 
         } else {
           state.isAuthenticated = false
           state.token = ''
           localStorage.removeItem("token")
+          axios.defaults.headers.common['Authorization'] = ""
+
         }
     },
     logout(state){
           state.isAuthenticated = false
           state.token = ''
+          axios.defaults.headers.common['Authorization'] = ""
           localStorage.removeItem("token")
     },
   },
