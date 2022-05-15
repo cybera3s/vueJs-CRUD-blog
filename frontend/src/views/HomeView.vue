@@ -3,7 +3,7 @@
       <h1 class="text-center mb-4">Home</h1>
       
       <!-- Articles -->
-      <article v-for="article in articles">
+      <article v-if="articles.length" v-for="article in articles">
         <h3>
           <router-link :to="`/article/${article.slug}`">
             {{article.title}}
@@ -17,23 +17,31 @@
         </div>
         <hr>
       </article>
+      <div class="alert alert-info">
+        There is no any posts.
+      </div>
 
 
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
+import axios from 'axios'
 
 export default {
   name: 'HomeView',
   data (){
-    let articles = localStorage.getItem("articles")
-    articles = JSON.parse(articles)
     return {
-      articles: articles,
+      articles: '',
     }
-  }
+  },
+  mounted() {
+      axios
+      .get("/article/") 
+      .then(response => {
+          this.articles = response.data
+      })
+  },
  
 }
 </script>
