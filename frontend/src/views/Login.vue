@@ -49,6 +49,7 @@
 </template>
 
 <script>
+  import axios from 'axios'
   export default{
     name:'Login',
     data(){
@@ -65,7 +66,7 @@
       doLogin(){
         let access = true
 
-        if (this.username.length < 5){
+        if (this.username.length < 4){
           this.usernameE = true
           access = false
           if (this.username.length == 0){
@@ -79,7 +80,7 @@
           this.usernameEM = ''
         }
 
-        if (this.password.length < 6){
+        if (this.password.length < 4){
           this.passwordE = true
           access = false
           if (this.password.length == 0){
@@ -94,8 +95,23 @@
         }
 
         if (access){
-            this.$store.commit("login", `${this.username}:${this.password}`)
-            this.$router.push("profile")
+
+            // axios
+            //   .post('/api/auth/token/login/', {"username": this.username, "password": this.password})
+            //   .then(response => console.log(response) )
+            //   .catch(error => console.log(error))
+
+              axios({
+                        method:'post',
+                        url: '/api/auth/token/login/',
+                        data: {
+                            username: this.username,
+                            password: this.password
+                        },
+                    }).then(response => console.log(response));
+                
+            // this.$store.commit("login", `${this.username}:${this.password}`)
+            // this.$router.push("profile")
         }
         
       }
