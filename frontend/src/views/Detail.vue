@@ -1,18 +1,19 @@
 <template>
   <div class="Detail">
-    
-      <!-- Articles -->
-      <article >
+      
+      <div v-if="!articleNotFound">
+        <article >
 
         <h3>{{article.title}}</h3>
         <div>{{article.content}}</div>
 
-      </article>
+         </article>
       <hr>
       <div v-if="$store.state.isAuthenticated">
         <button @click="edit=!edit" class="btn btn-warning me-1">Edit</button>
         <button class="btn btn-danger" @click="doRemove">Remove</button>
         <hr>
+        
         <form @submit.prevent="doEdit" v-if="edit" id="edit-form">
           <div class="mb-3">
 
@@ -40,30 +41,41 @@
           <button class="btn btn-primary">Edit Article</button>
         </form> 
       </div>
+      </div>
+      <div v-else class="alert alert-danger">
+          Article Not Found !!! 
+      </div>
+      
   </div>
 </template>
 
 
 <script>
-
+import axios from "axios"
 export default {
   name: 'Detail',
   data (){
-    let articles = localStorage.getItem("articles")
-    articles = JSON.parse(articles)
-
-    let article = articles.find(
-        article => article.slug == this.$route.params.slug
-    )
 
     return {
-      articles: articles,
-      article: article,
-      title: article.title,
-      description: article.description,
-      content : article.content,
-      edit: false,
+      article: {} ,
+      articleNotFound :false,
+      // title: '',
+      // description: '',
+      // content : '',
+      // edit: false,
     }
+  },
+
+  mounted() {
+      axios
+        .get(`/article/${this.$route.params.slug}`) 
+        .then(response => {
+        this.article = response.data
+        })
+        .catch(error => {
+          this.error = true
+        })
+  
   },
   methods: {
     // edit form func
