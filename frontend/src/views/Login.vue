@@ -73,21 +73,21 @@
             this.usernameEM = "Username required!"
 
           } else {
-              this.usernameEM = "Username must be at least 5 characters"            
+              this.usernameEM = "Username must be at least 4 characters"            
           }
         } else {
           this.usernameE = false
           this.usernameEM = ''
         }
 
-        if (this.password.length < 4){
+        if (this.password.length < 8){
           this.passwordE = true
           access = false
           if (this.password.length == 0){
             this.passwordEM = "Password required!"
 
           } else {
-              this.passwordEM = "Password must be at least 5 characters"            
+              this.passwordEM = "Password must be at least 8 characters"            
           }
         } else {
           this.passwordE = false
@@ -96,19 +96,28 @@
 
         if (access){
 
-            // axios
-            //   .post('/api/auth/token/login/', {"username": this.username, "password": this.password})
-            //   .then(response => console.log(response) )
-            //   .catch(error => console.log(error))
+            axios
+              .post('/api/auth/token/login/', {"username": this.username, "password": this.password})
+              .then(response =>  {
+                  this.$store.commit("login", response.data.auth_token)
+                    this.$router.push("profile")
 
-              axios({
-                        method:'post',
-                        url: '/api/auth/token/login/',
-                        data: {
-                            username: this.username,
-                            password: this.password
-                        },
-                    }).then(response => console.log(response));
+              })
+              .catch(error => {
+                console.log(error.response.data.non_field_errors.join(" "))
+                  this.usernameEM = true
+                  this.passwordE = true
+                  this.usernamee = true
+              })
+
+              // axios({
+              //           method:'post',
+              //           url: '/api/auth/token/login/',
+              //           data: {
+              //               username: this.username,
+              //               password: this.password
+              //           },
+              //       }).then(response => console.log(response));
                 
             // this.$store.commit("login", `${this.username}:${this.password}`)
             // this.$router.push("profile")
