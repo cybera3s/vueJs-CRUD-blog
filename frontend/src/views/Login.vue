@@ -3,7 +3,7 @@
 
     <div class="row">
       <div class="col-11 col-sm-10 col-md-8 col-lg-6 col-xl-4 mx-auto border shadow rounded p-4 mt-3">
-          <h1  class="text-center text-shadow">Login page</h1>
+          <h1  class="text-center text-shadow fw-bold text-primary" style="font-family: Georgia, serif;">Login</h1>
           <hr>
           <form @submit.prevent="doLogin">
 
@@ -37,7 +37,7 @@
                     </div>
               </div>
 
-              <button type="submit" class="btn btn-primary w-100">Login</button>
+              <button type="submit" class="btn btn-primary w-100 fw-bold">Login</button>
 
           </form>
       </div>
@@ -104,9 +104,10 @@
 
               })
               .catch(error => {
+                  console.log(error.response.data.non_field_errors.join(" "))
                   this.usernameEM = error.response.data.non_field_errors.join(" ")
                   this.passwordE = true
-                  this.usernamee = true
+                  this.usernameE = true
               })
 
             // this.$store.commit("login", `${this.username}:${this.password}`)
