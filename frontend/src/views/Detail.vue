@@ -9,11 +9,18 @@
 
          </article>
       <hr>
+
+      <!-- modify buttons -->
       <div v-if="$store.state.isAuthenticated">
         <button @click="edit=!edit" class="btn btn-warning me-1">Edit</button>
         <button class="btn btn-danger" @click="doRemove">Remove</button>
         <hr>
-        
+
+      <!-- Edit Form -->
+        <div class="alert alert-danger" v-if="errorEdit">
+          Something went wrong 
+
+        </div>
         <form @submit.prevent="doEdit" v-if="edit" id="edit-form">
           <div class="mb-3">
 
@@ -59,10 +66,11 @@ export default {
     return {
       article: {} ,
       articleNotFound :false,
-      // title: '',
-      // description: '',
-      // content : '',
-      // edit: false,
+      title: '',
+      description: '',
+      content : '',
+      edit: false,
+      errorEdit: false
     }
   },
 
@@ -71,6 +79,9 @@ export default {
         .get(`/article/${this.$route.params.slug}`) 
         .then(response => {
         this.article = response.data
+        this.title= this.article.title
+        this.description=this.article.description
+        this.content =this.article.content
         })
         .catch(error => {
           this.error = true
@@ -81,24 +92,27 @@ export default {
     // edit form func
     doEdit(){
 
-          let index = this.articles.findIndex(
-          article => article.slug == this.$route.params.slug
-        )
-          console.log(index)
-          console.log(this.articles[index])
+      let article = {
+        title: this.title,
+        slug: this.title.replaceAll(" " , "-").toLowerCase(),
+        description: this.description,
+        content: this.content,
+      }
 
-          this.articles[index] = {
-            title: this.title,
-            slug: this.title.replaceAll(" " , "-").toLowerCase(),
-            description: this.description,
-            content: this.content,
-          }
+      axios
+          .put(`/article/${this.$route.params.slug}/`, article) 
+          .then(response => {
+            console.log(response)
+            this.article = article
+            this.edit = false
+            this.$router.push(`/article/${article.slug}`)
 
-          let database = JSON.stringify(this.articles)
-          localStorage.setItem("articles", database)
-          this.article = this.articles[index]
-          this.edit = false
-          this.$router.push(`/article/${this.articles[index].slug}`)
+          })
+          .catch(error => {
+            this.errorEdit = true
+          })
+         
+          
 
     },
     // remove form func
