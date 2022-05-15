@@ -1,6 +1,9 @@
 <template>
   <div class="Logout">
-    <h1>This is an Logout page</h1>
+    <h1>Logout</h1>
+    <div class="alert alert-danger" v-if="logoutError" style="font-family: Georgia, serif;">
+      {{logoutError}}
+    </div>
     <button @click="doLogout" class="btn btn-danger">Logout</button>
   </div>
 </template>
@@ -11,18 +14,30 @@
 
   export default{
     name:'Logout',
+    data(){
+      return {
+        logoutError: '',
+      }
+    },
     methods: {
       doLogout(){
         
-        // 
-        // axios
-        //     .get('/api/auth/token/logout/')
-        //     .then(response => console.log(response))
-        //     .catch(error => console.log(error))
+        
+            axios
+              .post('/api/auth/token/logout/')
+              .then(response =>  {
 
- 
-            this.$store.commit("logout")
-            this.$router.push("login")
+                    this.$store.commit("logout")
+                    this.$router.push("login")
+
+              })
+              .catch(error => {
+                  console.log(error.response.data)
+                  this.logoutError = error.response.data
+              })
+            
+
+            
       }
     }
   }
