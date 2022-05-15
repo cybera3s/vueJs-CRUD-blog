@@ -10,37 +10,15 @@ export default createStore({
   getters: {
   },
   mutations: {
-    onStart(state){
-      let token = localStorage.getItem('token')
-      if (token){
-        state.isAuthenticated = true
-        state.token = token
-        axios.defaults.headers.common['Authorization'] = "Token " + token
-
-      } else {
-        state.isAuthenticated = false
-        state.token = ''
-        axios.defaults.headers.common['Authorization'] = ""
-
-      }
-    },
+    
     login(state, token){
-        if (token){
           state.isAuthenticated = true
           state.token = token
           localStorage.setItem("token", token)
           axios.defaults.headers.common['Authorization'] = "Token " + token
 
-
-
-        } else {
-          state.isAuthenticated = false
-          state.token = ''
-          localStorage.removeItem("token")
-          axios.defaults.headers.common['Authorization'] = ""
-
-        }
     },
+    
     logout(state){
           state.isAuthenticated = false
           state.token = ''
@@ -49,6 +27,26 @@ export default createStore({
     },
   },
   actions: {
+    onStart(context) {
+      let token = localStorage.getItem('token')
+      if (token){
+         axios.defaults.headers.common['Authorization'] = "Token " + token
+
+        axios
+              .get('/api/auth/users/me/')
+              .then(response =>  {
+                    context.commit('login', token)
+
+
+              })
+              .catch(error => {
+                 context.commit('logout')
+
+              })
+
+      } 
+    },
+
   },
   modules: {
   }
