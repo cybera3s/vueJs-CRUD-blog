@@ -11,6 +11,12 @@
       <hr>
 
       <!-- modify buttons -->
+
+      <div class="alert alert-danger" v-if="errorDel">
+          Something went wrong 
+
+      </div>
+
       <div v-if="$store.state.isAuthenticated">
         <button @click="edit=!edit" class="btn btn-warning me-1">Edit</button>
         <button class="btn btn-danger" @click="doRemove">Remove</button>
@@ -70,7 +76,8 @@ export default {
       description: '',
       content : '',
       edit: false,
-      errorEdit: false
+      errorEdit: false,
+      errorDel: false ,
     }
   },
 
@@ -118,14 +125,19 @@ export default {
     // remove form func
     doRemove() {
 
-        let index = this.articles.findIndex(
-          article => article.slug == this.$route.params.slug
-        )
-        this.articles.splice(index, 1)
+        axios
+          .delete(`/article/${this.$route.params.slug}/`) 
+          .then(response => {
+            
+            this.$router.push("/")
 
-          let database = JSON.stringify(this.articles)
-          localStorage.setItem("articles", database)
-          this.$router.push("/")
+          })
+          .catch(error => {
+            this.errorDel = true
+            console.log(error)
+          })
+          
+          
 
     },
   }
