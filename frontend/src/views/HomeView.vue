@@ -17,7 +17,7 @@
         </div>
         <hr>
       </article>
-      <div class="alert alert-info">
+      <div class="alert alert-info" v-else>
         There is no any posts.
       </div>
 
