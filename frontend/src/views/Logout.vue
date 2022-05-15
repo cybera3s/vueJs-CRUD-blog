@@ -15,14 +15,14 @@
       doLogout(){
         
         // 
-        axios
-            .get('/api/auth/token/logout/')
-            .then(response => console.log(response))
-            .catch(error => console.log(error))
+        // axios
+        //     .get('/api/auth/token/logout/')
+        //     .then(response => console.log(response))
+        //     .catch(error => console.log(error))
 
-
-            // this.$store.commit("logout")
-            // this.$router.push("login")
+ 
+            this.$store.commit("logout")
+            this.$router.push("login")
       }
     }
   }
