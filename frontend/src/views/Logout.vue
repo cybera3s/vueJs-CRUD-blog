@@ -7,12 +7,22 @@
 
 
 <script>
+    import axios from 'axios'
+
   export default{
     name:'Logout',
     methods: {
       doLogout(){
-        this.$store.commit("logout")
-        this.$router.push("login")
+        
+        // 
+        axios
+            .get('/api/auth/token/logout/')
+            .then(response => console.log(response))
+            .catch(error => console.log(error))
+
+
+            // this.$store.commit("logout")
+            // this.$router.push("login")
       }
     }
   }
