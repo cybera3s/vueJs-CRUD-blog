@@ -110,15 +110,6 @@
                   this.usernamee = true
               })
 
-              // axios({
-              //           method:'post',
-              //           url: '/api/auth/token/login/',
-              //           data: {
-              //               username: this.username,
-              //               password: this.password
-              //           },
-              //       }).then(response => console.log(response));
-                
             // this.$store.commit("login", `${this.username}:${this.password}`)
             // this.$router.push("profile")
         }
