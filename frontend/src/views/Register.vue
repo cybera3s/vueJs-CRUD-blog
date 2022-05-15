@@ -64,6 +64,7 @@
 </template>
 
 <script>
+  import axios from 'axios'
   export default{
     name:'Register',
     data(){
@@ -117,14 +118,14 @@
         }
         // Confirm Password validation
 
-        if (this.password2.length < 6){
+        if (this.password2.length < 8){
           this.password2E = true
           access = false
           if (this.password2.length == 0){
             this.password2EM = "confirm Password required!"
 
           } else {
-              this.password2EM = "Confirm Password must be at least 5 characters"            
+              this.password2EM = "Confirm Password must be at least 8 characters"            
           }
         } else {
           this.password2E = false
@@ -144,8 +145,32 @@
         }
 
         if (access){
-            this.$store.commit("login", `${this.username}:${this.password}`)
-            this.$router.push("profile")
+
+            axios
+              .post('/api/auth/users/', {"username": this.username, "password": this.password})
+              .then(response =>  {
+                  console.log(response)
+                  // this.$store.commit("login", response.data.auth_token)
+                    this.$router.push("login")
+
+              })
+              .catch(error => {
+                console.log(error)
+                console.log(error.response.data)
+                if (error.response.data.username){
+                  this.usernameE = true
+                  this.usernameEM = error.response.data.username.join(" ")
+                } else if (error.response.data.password){
+                  this.passwordE = true
+                  this.password2E = true
+                  this.passwordEM = error.response.data.password.join(" ")
+                }
+                  // this.usernameEM = true
+                  // this.passwordE = true
+                  // this.usernamee = true
+              })
+            // this.$store.commit("login", `${this.username}:${this.password}`)
+            // this.$router.push("profile")
         }
         
       }
