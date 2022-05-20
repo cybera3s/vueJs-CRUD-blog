@@ -104,7 +104,7 @@
 
               })
               .catch(error => {
-                  console.log(error.response.data.non_field_errors.join(" "))
+                  console.log(error)
                   this.usernameEM = error.response.data.non_field_errors.join(" ")
                   this.passwordE = true
                   this.usernameE = true
