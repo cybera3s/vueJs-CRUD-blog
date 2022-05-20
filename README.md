@@ -8,20 +8,14 @@
 
 
 <div align="center">
-  <h1 align="center">Students</h3>
+  <h1 align="center">CRUD Blog</h3>
 
   <p align="center">
-It's Sample of <b>Students Table</b>  website that allows logged in users to access , delete or add a new one into students table. 
-Using <b>Django</b> as back-End to Handle Database and <b>Django REST Framework</b> to serve REST API for data manipulation in database and also login, logout and identify users through <b>HTTP</b>  with <b>Token Authentication</b>  system. Using <b>VueJS 3</b> as Front-End framework to create a single page applications As well as taking advantage of reactivity of that and also it's Responsive by <b>Bootstrap 5</b>
+It's Sample of <b>CRUD Blog</b> that allows users to Create, Read, Update and Delete blog posts. 
+Using <b>Django</b> as back-End to Handle Database and <b>Django REST Framework</b> to serve REST API for post manipulation in database and also login, logout and identify users through <b>HTTP</b>  with <b>Token Authentication</b>  system. Using <b>VueJS 3</b> as Front-End framework to create a single page applications As well as taking advantage of reactivity of that and also it's Responsive by <b>Bootstrap 5</b>
   
   </p>
 </div>
-
-
-https://user-images.githubusercontent.com/74768669/168882801-d974ff25-92dd-4fe1-a059-3d1d993cf858.mp4
-
-
-
 
 
 ### Built With
@@ -29,7 +23,6 @@ https://user-images.githubusercontent.com/74768669/168882801-d974ff25-92dd-4fe1-
  * [Django REST Framework](https://www.django-rest-framework.org/)
 * [Vue.js](https://vuejs.org/)
 * [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
 
 
 ### Prerequisites
