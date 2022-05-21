@@ -30,7 +30,7 @@
                 v-model="password"
                 :class="{
                   'is-invalid': passwordE === true,
-                  'is-valid': passwordE === true
+                  'is-valid': passwordE === false
                 }">
                  <div class="invalid-feedback" v-if="passwordE">
                       {{passwordEM}}
@@ -66,6 +66,7 @@
       doLogin(){
         let access = true
 
+      // username validation
         if (this.username.length < 4){
           this.usernameE = true
           access = false
@@ -80,6 +81,7 @@
           this.usernameEM = ''
         }
 
+      // password validation
         if (this.password.length < 8){
           this.passwordE = true
           access = false
@@ -95,11 +97,10 @@
         }
 
         if (access){
-
             axios
               .post('/api/auth/token/login/', {"username": this.username, "password": this.password})
               .then(response =>  {
-                  this.$store.commit("login", response.data.auth_token)
+                    this.$store.commit("login", response.data.auth_token)
                     this.$router.push("profile")
 
               })
@@ -110,8 +111,7 @@
                   this.usernameE = true
               })
 
-            // this.$store.commit("login", `${this.username}:${this.password}`)
-            // this.$router.push("profile")
+            
         }
         
       }
