@@ -116,7 +116,7 @@ Project Link: [https://github.com/cybera3s/vueJs-CRUD-blog](https://github.com/c
 [forks-shield]: https://img.shields.io/github/forks/cybera3s/vueJs-CRUD-blog.svg?style=for-the-badge
 [forks-url]: https://github.com/cybera3s/vueJs-CRUD-blog/network/members
 [stars-shield]: https://img.shields.io/github/stars/cybera3s/vueJs-CRUD-blog.svg?style=for-the-badge
-[stars-url]: https://github.com/cybera3s/repo_name/stargazers
+[stars-url]: https://github.com/cybera3s/vueJs-CRUD-blog/stargazers
 [issues-shield]: https://img.shields.io/github/issues/cybera3s/vueJs-CRUD-blog.svg?style=for-the-badge
 [issues-url]: https://github.com/cybera3s/vueJs-CRUD-blog/issues
 [license-shield]: https://img.shields.io/github/license/cybera3s/vueJs-CRUD-blog.svg?style=for-the-badge
