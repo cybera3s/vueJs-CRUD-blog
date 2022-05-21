@@ -6,6 +6,7 @@ export default createStore({
   state: {
     isAuthenticated: false,
     token: '',
+    searchValue: '',
   },
   getters: {
   },
