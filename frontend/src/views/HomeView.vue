@@ -1,6 +1,5 @@
 <template>
   <div class="Home">
-      <h1 class="text-center mb-4">Home</h1>
       
       <!-- Articles -->
       <article v-if="articles.length" v-for="article in filteredArticles">
