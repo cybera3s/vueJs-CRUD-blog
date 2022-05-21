@@ -45,25 +45,18 @@
 					          
 				        </ul>
 
-				        <form class="d-flex">
-				          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-				          <button class="btn btn-outline-light" type="submit">Search</button>
-				        </form>
+				        <div class="d-flex" v-if="$route.name=='home'">
+				          <input class="form-control me-2" type="search" v-model="$store.state.searchValue" placeholder="Search" aria-label="Search">
+				        </div>
 				        
 		        	</div>
     		</div>
   		</nav>
 	</div>
-
 </template>
 
 <script>
 	export default {
 		name: 'Navbar',
-		data() {
-			return {
-
-			}
-		}
 	}
 </script>
