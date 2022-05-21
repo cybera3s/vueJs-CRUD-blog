@@ -20,7 +20,6 @@
         There is no any posts.
       </div>
 
-
   </div>
 </template>
 
@@ -50,3 +49,8 @@ export default {
   },
 }
 </script>
+<style scoped>
+  article a{
+    text-decoration: none;
+  }
+</style>
