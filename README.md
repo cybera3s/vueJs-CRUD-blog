@@ -9,7 +9,9 @@ Using <b>Django</b> as back-End to Handle Database and <b>Django REST Framework<
   
   </p>
 </div>
-
+<div>
+	<img src="https://user-images.githubusercontent.com/74768669/169647855-840dd9cc-668c-4553-8e74-8b3b3572b3b5.png" alt="home_page" >
+</div>
 
 ### Built With
  * [Django](https://www.djangoproject.com/)
