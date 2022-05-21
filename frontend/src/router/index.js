@@ -91,4 +91,12 @@ router.beforeEach((to, from) => {
   }
 })
 
+// dynamic title
+const DEFAULT_TITLE = 'Blog';
+
+router.afterEach((to, from) => {
+        document.title = to.name || DEFAULT_TITLE;
+    
+});
+
 export default router
