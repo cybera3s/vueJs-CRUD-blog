@@ -3,7 +3,7 @@
       <h1 class="text-center mb-4">Home</h1>
       
       <!-- Articles -->
-      <article v-if="articles.length" v-for="article in articles">
+      <article v-if="articles.length" v-for="article in filteredArticles">
         <h3>
           <router-link :to="`/article/${article.slug}`">
             {{article.title}}
@@ -42,6 +42,12 @@ export default {
           this.articles = response.data
       })
   },
- 
+  computed:{
+
+    filteredArticles(){
+      return this.articles.filter(a => a.title.toLowerCase().includes(this.$store.state.searchValue.toLowerCase()))      
+    },
+    
+  },
 }
 </script>
