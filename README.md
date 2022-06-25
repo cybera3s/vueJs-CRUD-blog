@@ -22,9 +22,9 @@ Using <b>Django</b> as back-End to Handle Database and <b>Django REST Framework<
 
 ### Prerequisites
 
-* npm
+* nodejs
   ```sh
-  npm install npm@latest -g
+  sudo apt install nodejs
   ```
  * python (Debian)
   
