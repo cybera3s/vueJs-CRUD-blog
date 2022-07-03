@@ -1,0 +1,50 @@
+[
+{
+    "model": "api.article",
+    "pk": 6,
+    "fields": {
+        "title": "Python",
+        "slug": "python",
+        "description": "Python programming language was considered a gap-filler, a way to write scripts that “automate the boring stuff”",
+        "content": "Dating from 1991, the Python programming language was considered a gap-filler, a way to write scripts that “automate the boring stuff” (as one popular book on learning Python put it) or to rapidly prototype applications that will be implemented in other languages.\n\nHowever, over the past few years, Python has emerged as a first-class citizen in modern software development, infrastructure management, and data analysis. It is no longer a back-room utility language, but a major force in web application creation and systems management, and a key driver of the explosion in big data analytics and machine intelligence.",
+        "created_at": "2022-05-21T09:53:32.870Z",
+        "updated_at": "2022-05-21T09:53:32.870Z"
+    }
+},
+{
+    "model": "api.article",
+    "pk": 7,
+    "fields": {
+        "title": "JavaScript",
+        "slug": "javascript",
+        "description": "JavaScript is a scripting or programming language that allows you to implement complex features on web pages",
+        "content": "JavaScript is a scripting or programming language that allows you to implement complex features on web pages — every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved. It is the third layer of the layer cake of standard web technologies, two of which (HTML and CSS) we have covered in much more detail in other parts of the Learning Area.",
+        "created_at": "2022-05-21T09:55:33.140Z",
+        "updated_at": "2022-05-21T09:55:33.140Z"
+    }
+},
+{
+    "model": "api.article",
+    "pk": 8,
+    "fields": {
+        "title": "Django",
+        "slug": "django",
+        "description": "In this first Django article, we answer the question \"What is Django?\" and give you an overview of what makes this web framework special.\n\n",
+        "content": "Django is a high-level Python web framework that enables rapid development of secure and maintainable websites. Built by experienced developers, Django takes care of much of the hassle of web development, so you can focus on writing your app without needing to reinvent the wheel. It is free and open source, has a thriving and active community, great documentation, and many options for free and paid-for support.\n\n",
+        "created_at": "2022-05-21T09:59:23.998Z",
+        "updated_at": "2022-05-21T09:59:23.998Z"
+    }
+},
+{
+    "model": "api.article",
+    "pk": 9,
+    "fields": {
+        "title": "Vue JS",
+        "slug": "vue-js",
+        "description": "Vue (pronounced /vjuː/, like view) is a progressive framework for building user interfaces. It is designed from the ground up to be incrementally adoptable",
+        "content": "Vue (pronounced /vjuː/, like view) is a progressive framework for building user interfaces. It is designed from the ground up to be incrementally adoptable, and can easily scale between a library and a framework depending on different use cases. It consists of an approachable core library that focuses on the view layer only, and an ecosystem of supporting libraries that helps you tackle complexity in large Single-Page Applications.",
+        "created_at": "2022-05-21T10:12:04.665Z",
+        "updated_at": "2022-05-21T10:12:04.665Z"
+    }
+}
+]
