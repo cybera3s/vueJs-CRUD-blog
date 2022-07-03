@@ -68,7 +68,7 @@ install required packages
     pip install -r requirements.txt
 create databse tables
 
-    python manage.py makemigrations api
+    python manage.py makemigrations
     python manage.py migrate
 create a super user
 
