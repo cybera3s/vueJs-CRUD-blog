@@ -66,10 +66,9 @@ create virtual environment
 install required packages
 
     pip install -r requirements.txt
-create databse tables
+create database tables
 
-    python manage.py makemigrations api
-    python manage.py migrate
+    python manage.py makemigrations && python manage.py migrate
 create a super user
 
     python manage.py createsuperuser
