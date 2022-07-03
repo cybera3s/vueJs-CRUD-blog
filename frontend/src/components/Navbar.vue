@@ -62,8 +62,6 @@
 		name: 'Navbar',
     methods: {
       doLogout(){
-
-
             axios
               .post('/api/auth/token/logout/')
               .then(response =>  {
@@ -76,8 +74,6 @@
                   console.log(error.response.data)
                   this.logoutError = error.response.data
               })
-
-
 
       }
     }
