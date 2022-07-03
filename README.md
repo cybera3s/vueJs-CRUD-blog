@@ -1,7 +1,7 @@
 <div id="top"></div>
 
 <div align="center">
-  <h1 align="center">CRUD Blog</h3>
+  <h1 align="center">CRUD Blog</h1>
 
   <p align="center">
 It's Sample of <b>CRUD Blog</b> that allows users to Create, Read, Update and Delete blog posts. 
@@ -27,10 +27,9 @@ Using <b>Django</b> as back-End to Handle Database and <b>Django REST Framework<
   sudo apt install nodejs
   ```
  * python (Debian)
-  
-   	```sh
-	sudo apt install python
-	  ```
+  ```sh
+  sudo apt install python
+  ```
 for other platforms go to  [this link](https://www.python.org/downloads/)
 ### Installation
 
