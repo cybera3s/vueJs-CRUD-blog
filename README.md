@@ -73,6 +73,11 @@ create a super user
 
     python manage.py createsuperuser
 
+load sample data
+
+    python manage.py loaddata data.json
+
+
 start Django deveopment server
 
     python manage.py runserver
