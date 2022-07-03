@@ -49,7 +49,9 @@ run development server
    ```sh
    npm run serve
    ```
-if everything goes well and server is running then for the server side: 
+if everything goes well and npm development server is running then for the server side 
+start a new terminal: 
+
  change directory to backend 
 	 
     cd ../backend
