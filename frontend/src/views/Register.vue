@@ -16,7 +16,9 @@
                     :class="{
                       'is-invalid': usernameE === true,
                       'is-valid': usernameE === false
-                    }">
+                    }"
+                    placeholder="Username here"
+                >
                     <div class="invalid-feedback" v-if="usernameE">
                       {{usernameEM}}
                     </div>
@@ -31,7 +33,9 @@
                 :class="{
                   'is-invalid': passwordE === true,
                   'is-valid': passwordE === true
-                }">
+                }"
+                placeholder="Password here"
+                >
                  <div class="invalid-feedback" v-if="passwordE">
                       {{passwordEM}}
                     </div>
@@ -46,7 +50,9 @@
                 :class="{
                   'is-invalid': password2E === true,
                   'is-valid': password2E === true
-                }">
+                }"
+                placeholder="Confirm Password here"
+                >
                  <div class="invalid-feedback" v-if="password2E">
                       {{password2EM}}
                     </div>
