@@ -39,6 +39,10 @@ Clone the repo
    ```
 change directory to frontend and install required packages
    ```sh
+   cd vueJs-CRUD-blog
+   ```
+change directory to frontend and install required packages
+   ```sh
    cd frontend && npm install
    ```
 run development server
