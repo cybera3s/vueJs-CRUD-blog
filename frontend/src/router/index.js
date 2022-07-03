@@ -1,19 +1,18 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import store from '@/store'
+import { createRouter, createWebHistory } from 'vue-router';
+import store from '@/store';
 
-import HomeView from '../views/HomeView.vue'
-import Detail from '../views/Detail.vue'
-import Add from '../views/Add.vue'
+import HomeView from '../views/HomeView.vue';
+import Detail from '../views/Detail.vue';
+import Add from '../views/Add.vue';
 
 
 
-import AboutView from '../views/AboutView.vue'
+import AboutView from '../views/AboutView.vue';
 
 // Account
-import Profile from '../views/Profile.vue'
-import Login from '../views/Login.vue'
-import Logout from '../views/Logout.vue'
-import Register from '../views/Register.vue'
+import Profile from '../views/Profile.vue';
+import Login from '../views/Login.vue';
+import Register from '../views/Register.vue';
 
 
 
@@ -51,14 +50,6 @@ const routes = [
     name: "Login",
     component: Login,
     meta: { redirect: true }
-
-  },
-  {
-    path: "/logout",
-    name: "Logout",
-    component: Logout,
-    meta: { requiresAuth: true }
-
 
   },
   {
