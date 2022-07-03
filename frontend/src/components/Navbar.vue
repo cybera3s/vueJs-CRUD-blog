@@ -56,7 +56,30 @@
 </template>
 
 <script>
-	export default {
+	import axios from "axios";
+
+  export default {
 		name: 'Navbar',
+    methods: {
+      doLogout(){
+
+
+            axios
+              .post('/api/auth/token/logout/')
+              .then(response =>  {
+
+                    this.$store.commit("logout")
+                    this.$router.push("login")
+
+              })
+              .catch(error => {
+                  console.log(error.response.data)
+                  this.logoutError = error.response.data
+              })
+
+
+
+      }
+    }
 	}
 </script>
