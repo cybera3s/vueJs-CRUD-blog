@@ -39,7 +39,7 @@
 
 					          </li>
 					          <li class="nav-item" v-if="$store.state.isAuthenticated">
-					            <router-link class="nav-link" to="/logout">logout</router-link>
+					            <a class="nav-link"  @click.prevent="doLogout">logout</a>
 
 					          </li>
 					          
