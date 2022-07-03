@@ -5,7 +5,7 @@
 
   <p align="center">
 It's Sample of <b>CRUD Blog</b> that allows users to Create, Read, Update and Delete blog posts. 
-Using <b>Django</b> as back-End to Handle Database and <b>Django REST Framework</b> to serve REST API for post manipulation in database and also login, logout and identify users through <b>HTTP</b>  with <b>Token Authentication</b>  system. Using <b>VueJS 3</b> as Front-End framework to create a single page applications As well as taking advantage of reactivity of that and also it's Responsive by <b>Bootstrap 5</b>
+Using <b>Django</b> as back-End to Handle Database and <b>Django REST Framework</b> to serve REST API for post manipulation in database and also login, logout and identify users through <b>HTTP</b>  with <b>Token Authentication</b>  system and Json Web Token. Using <b>VueJS 3</b> as Front-End framework to create a single page applications As well as taking advantage of reactivity of that and also it's Responsive by <b>Bootstrap 5</b>
   
   </p>
 </div>
@@ -127,4 +127,3 @@ Project Link: [https://github.com/cybera3s/vueJs-CRUD-blog](https://github.com/c
 [license-url]: https://github.com/cybera3s/vueJs-CRUD-blog/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/cybera3s
-[product-screenshot]: images/screenshot.png
