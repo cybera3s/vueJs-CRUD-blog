@@ -1,5 +1,6 @@
 venv
 .idea
 __pycache__
-migrations
-backend/db.sqlite3
+**/migrations/*
+!**/migrations/__init__.py
+db.sqlite3
